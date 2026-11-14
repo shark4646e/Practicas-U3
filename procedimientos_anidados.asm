@@ -1,7 +1,7 @@
 ; Materia  : Lenguajes de Interfaz
 ; Practica : Procedimientos anidados
 ; Alumno   : Fernando Gastelum Verduzco
-; Horario  : [escribe tu horario]
+; Horario  : 10:00 a 11:00 am
 ; Docente  : Dr. Jose Luis Medina Jimenez
 ; Programa : main llama a MostrarReporte, este llama a MostrarEncabezado
 ;            y este a MostrarSeparador. Cada procedimiento avisa cuando

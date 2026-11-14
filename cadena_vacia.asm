@@ -1,7 +1,7 @@
 ; Materia  : Lenguajes de Interfaz
 ; Practica : Manejo de cadena vacia
 ; Alumno   : Fernando Gastelum Verduzco
-; Horario  : [escribe tu horario]
+; Horario  : 10:00 a 11:00 am
 ; Docente  : Dr. Jose Luis Medina Jimenez
 ; Programa : Pide una cadena y cuenta sus caracteres con el procedimiento
 ;            LongitudCadena. Si la cadena esta vacia (longitud 0) avisa y
