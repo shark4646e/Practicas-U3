@@ -10,9 +10,7 @@ Tres programas en MASM x86 con Irvine32, uno por cada tema: procedimientos anida
 | Alumno | Fernando Gastelum Verduzco |
 | Institución | Instituto Tecnológico de Culiacán |
 | Docente | Dr. José Luis Medina Jiménez |
-| Horario | [escribe tu horario] |
-| Periodo | Agosto a diciembre de 2026 |
-| Entorno | Visual Studio 2022, MASM x86, Irvine32 |
+| Horario | 10:00 a 11:00 am |
 
 ## Índice de códigos
 
@@ -22,21 +20,6 @@ Tres programas en MASM x86 con Irvine32, uno por cada tema: procedimientos anida
 | 2 | Cadena vacía | [`src/cadena_vacia.asm`](src/cadena_vacia.asm) |
 | 3 | Pila manual | [`src/pila_manual.asm`](src/pila_manual.asm) |
 
-## Estructura del repositorio
-
-```
-lenguajes-de-interfaz-unidad3/
-├── README.md
-├── .gitignore
-└── src/
-    ├── procedimientos_anidados.asm
-    ├── cadena_vacia.asm
-    └── pila_manual.asm
-```
-
-## Cómo compilar y ejecutar
-
-Se abre un proyecto de consola de Visual Studio 2022 configurado para MASM con Irvine32 (el mismo que se usa en clase), se agrega el `.asm` que se quiera probar, se compila y se ejecuta sin depurar con Ctrl+F5. Solo debe haber un `.asm` con `main` activo por proyecto.
 
 ## 1. Procedimientos anidados (`procedimientos_anidados.asm`)
 
