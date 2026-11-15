@@ -1,6 +1,6 @@
 # Lenguajes de Interfaz: Unidad 3, Modularización
 
-Tres programas en MASM x86 con Irvine32, uno por cada tema: procedimientos anidados, cadena vacía y manejo de pila manual.
+Cuatro programas en MASM x86 con Irvine32, uno por cada tema: procedimientos anidados, cadena vacía, manejo de pila manual y macros.
 
 ## Datos generales
 
@@ -19,6 +19,7 @@ Tres programas en MASM x86 con Irvine32, uno por cada tema: procedimientos anida
 | 1 | Procedimientos anidados | [`src/procedimientos_anidados.asm`](src/procedimientos_anidados.asm) |
 | 2 | Cadena vacía | [`src/cadena_vacia.asm`](src/cadena_vacia.asm) |
 | 3 | Pila manual | [`src/pila_manual.asm`](src/pila_manual.asm) |
+| 4 | Macros | [`src/macros.asm`](src/macros.asm) |
 
 
 ## 1. Procedimientos anidados (`procedimientos_anidados.asm`)
@@ -106,3 +107,25 @@ EBX conservado (00012345)   : SI
 - `ESP` vale lo mismo antes de los `PUSH` y después de la llamada: los dos `PUSH` de los argumentos se compensan con el `RET 8`, y los `PUSH` y `POP` de `EBP` y `EBX` también quedan parejos.
 - La base está en `[EBP+12]` y la altura en `[EBP+8]`, porque la altura se colocó al final.
 - `EBX` conserva `12345h` después de la llamada gracias al `PUSH EBX` y `POP EBX` dentro del procedimiento.
+
+## 4. Macros (`macros.asm`)
+
+### Qué hace
+
+Define la macro `MostrarMensaje`, que recibe la etiqueta de una cadena, carga su dirección en `EDX`, la imprime con `WriteString` y baja una línea con `Crlf`. `main` la invoca dos veces, una para el mensaje de bienvenida y otra para el de despedida. Después repite la misma salida escribiendo las instrucciones a mano, sin macro, para comparar los dos métodos.
+
+### Qué se comprobó
+
+Salida obtenida:
+
+```
+BIENVENIDO A LA CAFETERIA DEL TEC
+GRACIAS POR TU VISITA, HASTA LUEGO
+BIENVENIDO A LA CAFETERIA DEL TEC
+GRACIAS POR TU VISITA, HASTA LUEGO
+```
+
+- Los dos mensajes aparecen dos veces: las primeras dos líneas salen de la macro y las otras dos de las instrucciones escritas a mano. Ambos métodos producen exactamente lo mismo.
+- El ensamblador copia las instrucciones de la macro en cada punto donde se invoca, así que no hay `CALL` ni `RET` de por medio y no se usa la pila para el salto.
+- La macro cambia el valor de `EDX` y no lo guarda, por lo que `main` no debe depender de lo que `EDX` tuviera antes de invocarla.
+- Las cadenas van sin acentos porque la consola de Irvine32 suele mostrar mal los caracteres especiales.
